@@ -4,6 +4,10 @@ import BannerSection from './components/BannerSection';
 import ReviewsSection from './components/ReviewsSection';
 import FAQSection from './components/FAQSection';
 import './App.css';
+import ServicesSection from './components/servicesection';
+import ClaritySection from './components/claritysection';
+import WhyChooseUs from './components/whychooseus';
+
 
 export default function App() {
   return (
@@ -16,7 +20,12 @@ export default function App() {
             <p className="hero-subtitle">Your trusted partner in financial growth. Experience seamless investing with transparent insights and expert guidance tailored just for you.</p>
           </div>
         </section>
-
+        <section id="services">
+          <ServicesSection />
+        </section>
+        <ClaritySection />
+        <WhyChooseUs />
+      
         <BannerSection />
         <ReviewsSection />
         <FAQSection />
