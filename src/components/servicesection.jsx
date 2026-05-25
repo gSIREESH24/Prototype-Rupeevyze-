@@ -142,10 +142,8 @@ export default function ServicesSection() {
             <h4 className="rv-card-title">{s.title}:</h4>
             <p className="rv-card-desc">{s.description}</p>
             <a href={s.link} className="rv-learn-more">
+              <span className="rv-learn-more-plus">+</span>
               Learn More
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </a>
           </div>
         ))}
