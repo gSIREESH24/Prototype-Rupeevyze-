@@ -1,0 +1,454 @@
+/* ── ClaritySection ── */
+.clarity-section {
+  padding: 5rem 5rem 5.5rem;
+  background: var(--sky-blue-light, #F0F9FF);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border, #e8edf5);
+}
+
+/* ── Card ── */
+.clarity-card {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 56px rgba(28, 68, 129, 0.15);
+  position: relative;
+  border: 1px solid var(--border, #e8edf5);
+}
+
+/* ── Left panel ── */
+.clarity-left {
+  flex: 0 0 55%;
+  background: linear-gradient(
+    135deg,
+    var(--dark-blue, #021B45) 0%,
+    var(--image-blue, #1C4481) 45%,
+    #24558a 100%
+  );
+  padding: 60px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* decorative circles */
+.clarity-left::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.clarity-left::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: 60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(0, 163, 137, 0.06);
+  pointer-events: none;
+}
+
+/* grid texture overlay */
+.clarity-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.clarity-left-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Eyebrow tag ── */
+.clarity-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 163, 137, 0.15);
+  border: 1px solid rgba(0, 163, 137, 0.35);
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal, #00A389);
+  margin-bottom: 1.4rem;
+  width: fit-content;
+}
+
+.clarity-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal, #00A389);
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ── Heading ── */
+.clarity-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: #ffffff;
+  margin: 0 0 1.2rem;
+}
+
+.clarity-heading span {
+  color: var(--teal, #00A389);
+  position: relative;
+  display: inline-block;
+}
+
+.clarity-heading span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal, #00A389), transparent);
+  border-radius: 2px;
+}
+
+/* ── Subtext ── */
+.clarity-subtext {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 2rem;
+  max-width: 420px;
+}
+
+/* ── CTA row ── */
+.clarity-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.clarity-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--teal, #00A389), #008a74);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 163, 137, 0.40);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease;
+  white-space: nowrap;
+}
+
+.clarity-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 36px rgba(0, 163, 137, 0.55);
+}
+
+.clarity-btn svg {
+  transition: transform 0.2s;
+}
+
+.clarity-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Agent contact ── */
+.clarity-agent {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.clarity-agent-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+  background: var(--image-blue, #1C4481);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clarity-agent-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clarity-agent-avatar svg {
+  width: 32px;
+  height: 32px;
+}
+
+.clarity-agent-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.clarity-agent-label {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.clarity-agent-phone {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ── Stats strip ── */
+.clarity-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 2.5rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.clarity-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.clarity-stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.clarity-stat-num span {
+  color: var(--teal, #00A389);
+}
+
+.clarity-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ── Right panel (image) ── */
+.clarity-right {
+  flex: 0 0 45%;
+  position: relative;
+  overflow: hidden;
+}
+
+.clarity-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.clarity-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 27, 69, 0.35) 0%,
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+/* floating badge on image */
+.clarity-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border: 1px solid var(--border, #e8edf5);
+}
+
+.clarity-badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--image-blue, #1C4481), var(--teal, #00A389));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.clarity-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.clarity-badge-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--dark-blue, #021B45);
+  line-height: 1;
+}
+
+.clarity-badge-sub {
+  font-size: 0.72rem;
+  color: var(--gray-text, #64748b);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ══ Responsive ══ */
+@media (max-width: 900px) {
+  .clarity-section {
+    padding: 3.5rem 2rem;
+  }
+  .clarity-card {
+    flex-direction: column;
+  }
+  .clarity-left,
+  .clarity-right {
+    flex: none;
+    width: 100%;
+  }
+  .clarity-right {
+    height: 280px;
+  }
+  .clarity-left {
+    padding: 44px 32px;
+  }
+  .clarity-stats {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .clarity-section {
+    padding: 2.5rem 1.25rem;
+  }
+  .clarity-left {
+    padding: 36px 24px;
+  }
+  .clarity-heading {
+    font-size: 1.7rem;
+  }
+  .clarity-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  /* Make CTA button full-width for easier tapping */
+  .clarity-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  .clarity-stats {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .clarity-right {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clarity-section {
+    padding: 2rem 1rem;
+  }
+  .clarity-left {
+    padding: 28px 18px;
+  }
+  .clarity-heading {
+    font-size: 1.5rem;
+  }
+  .clarity-subtext {
+    font-size: 0.88rem;
+  }
+  .clarity-badge {
+    bottom: 12px;
+    left: 10px;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .clarity-badge-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+  .clarity-badge-num {
+    font-size: 0.9rem;
+  }
+  .clarity-badge-sub {
+    font-size: 0.65rem;
+  }
+  /* Keep agent touch target comfortable */
+  .clarity-agent {
+    padding: 4px 0;
+  }
+  .clarity-agent-avatar {
+    width: 46px;
+    height: 46px;
+  }
+  .clarity-agent-phone {
+    font-size: 0.88rem;
+  }
+  .clarity-stat-num {
+    font-size: 1.25rem;
+  }
+  .clarity-right {
+    height: 200px;
+  }
+}
