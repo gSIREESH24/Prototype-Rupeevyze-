@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiHome, FiUser, FiGrid, FiBookOpen, FiMail } from 'react-icons/fi';
 import { FaRupeeSign, FaCalculator } from 'react-icons/fa';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpeg';
 import heroBg from '../assets/hero-bg.jpg';
 
 const Navbar = () => {
@@ -171,8 +171,8 @@ const Navbar = () => {
           padding: 0;
         }
         .rv-logo-img {
-          width: 38px; height: 38px;
-          border-radius: 50%;
+          width: 50px; height: 50px;
+          border-radius: 10px;
           object-fit: cover;
         }
         .rv-logo-text {
