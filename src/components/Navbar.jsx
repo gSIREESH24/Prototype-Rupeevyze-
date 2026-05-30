@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiHome, FiUser, FiGrid, FiBookOpen, FiMail } from 'react-icons/fi';
 import { FaRupeeSign, FaCalculator } from 'react-icons/fa';
 import logo from '../assets/logo.jpeg';
-import heroBg from '../assets/hero-bg.jpg';
+import heroBg from '../assets/Finance.jpg';
 
 const Navbar = () => {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
@@ -128,7 +128,7 @@ const Navbar = () => {
         <div className="rv-hero-content">
           <span className="rv-hero-eyebrow">Start Your Financial Journey</span>
           <h1 className="rv-hero-title">
-            Smart Financial<br />Decisions Start Here
+            Smart Financial<br /><span className="rv-hero-title-accent">Decisions</span> Start Here
           </h1>
           <p className="rv-hero-desc">
             RupeeVyze simplifies investing and wealth management through expert guidance,
@@ -323,24 +323,36 @@ const Navbar = () => {
           overflow: hidden;
         }
         .rv-hero-bg {
-          position: absolute; inset: 0;
+          position: absolute; inset: -10px;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
+          filter: blur(4px) brightness(0.42);
+          transform: scale(1.03);
         }
         .rv-hero-overlay {
           position: absolute; inset: 0;
-          background: linear-gradient(
-            135deg,
-            rgba(2,27,69,0.75) 0%,
-            rgba(2,27,69,0.45) 60%,
-            rgba(0,163,137,0.15) 100%
+          background: radial-gradient(
+            circle at center,
+            rgba(2, 27, 69, 0.35) 0%,
+            rgba(2, 27, 69, 0.78) 100%
           );
         }
         .rv-hero-content {
           position: relative; z-index: 2;
-          max-width: 780px;
-          padding: 2rem 1.5rem;
+          max-width: 800px;
+          padding: 3.5rem 3rem;
+          background: rgba(2, 27, 69, 0.45);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 24px;
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          animation: rvFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+          margin: 0 1.5rem;
         }
         .rv-hero-eyebrow {
           display: inline-block;
@@ -364,13 +376,30 @@ const Navbar = () => {
           line-height: 1.18;
           margin-bottom: 1.1rem;
         }
+        .rv-hero-title-accent {
+          background: linear-gradient(135deg, #00A389 0%, #00e0be 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .rv-hero-desc {
-          font-size: 1rem;
-          color: rgba(255,255,255,0.78);
-          line-height: 1.7;
+          font-size: 1.05rem;
+          color: rgba(255,255,255,0.88);
+          line-height: 1.75;
           margin-bottom: 2rem;
-          max-width: 540px;
+          max-width: 580px;
           margin-left: auto; margin-right: auto;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes rvFadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         /* ── Responsive ── */
@@ -384,6 +413,7 @@ const Navbar = () => {
         @media (max-width: 640px) {
           .rv-header-inner { padding: 0 1rem; height: 60px; }
           .rv-hero { padding-top: 60px; }
+          .rv-hero-content { padding: 2rem 1.25rem; border-radius: 16px; margin: 0 1rem; }
           .rv-hero-title { font-size: 2.2rem; }
           .rv-hero-desc { font-size: 0.93rem; }
           .rv-hamburger { width: 40px; height: 40px; }
@@ -392,10 +422,10 @@ const Navbar = () => {
         @media (max-width: 480px) {
           .rv-header-inner { padding: 0 0.875rem; height: 56px; }
           .rv-hero { padding-top: 56px; min-height: 90vh; }
+          .rv-hero-content { padding: 1.75rem 1rem; border-radius: 12px; margin: 0 0.75rem; }
           .rv-hero-title { font-size: 1.85rem; }
           .rv-hero-desc { font-size: 0.9rem; max-width: 100%; }
           .rv-hero-eyebrow { font-size: 0.68rem; }
-          .rv-hero-content { padding: 1.5rem 1.25rem; }
           .rv-logo-text { font-size: 1rem; }
           .rv-logo-img { width: 32px; height: 32px; }
         }
