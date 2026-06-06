@@ -1,4 +1,3 @@
-/* ── WhyChooseUs Section ── */
 .wcu-section {
   background: #ffffff;
   padding: 5rem 5rem;
@@ -16,7 +15,6 @@
   width: 100%;
 }
 
-/* ══ LEFT — image collage ══ */
 .wcu-left {
   flex: 0 0 480px;
   position: relative;
@@ -48,7 +46,6 @@
   border: 4px solid #ffffff;
 }
 
-/* decorative circle behind images */
 .wcu-circle-deco {
   position: absolute;
   width: 340px;
@@ -60,7 +57,6 @@
   z-index: 1;
 }
 
-/* ── Call card ── */
 .wcu-call-card {
   position: absolute;
   bottom: 0;
@@ -88,7 +84,6 @@
   box-shadow: 0 4px 12px rgba(0, 163, 137, 0.45);
 }
 
-/* Update the icon color for teal background */
 .wcu-call-icon svg path {
   fill: #ffffff;
 }
@@ -120,7 +115,6 @@
   white-space: nowrap;
 }
 
-/* ══ RIGHT — content ══ */
 .wcu-right {
   flex: 1;
   min-width: 0;
@@ -165,7 +159,6 @@
   max-width: 500px;
 }
 
-/* ── Feature list ── */
 .wcu-features {
   display: flex;
   flex-direction: column;
@@ -224,14 +217,12 @@
   color: var(--gray-text, #64748b);
 }
 
-/* ── Divider ── */
 .wcu-divider {
   height: 1px;
   background: linear-gradient(90deg, var(--sky-blue, #E0F2FE), transparent);
   margin-bottom: 2rem;
 }
 
-/* ── Bottom stat strip ── */
 .wcu-stats {
   display: flex;
   gap: 40px;
@@ -265,7 +256,6 @@
   text-transform: uppercase;
 }
 
-/* ══ Responsive ══ */
 @media (max-width: 1024px) {
   .wcu-section {
     padding: 4rem 2.5rem;
@@ -348,13 +338,11 @@
   }
 }
 
-/* ── Mobile: collapse collage into a single stacked image ── */
 @media (max-width: 480px) {
   .wcu-section {
     padding: 2.5rem 1rem;
   }
 
-  /* Switch left panel to normal flow so image fills naturally */
   .wcu-left {
     height: auto;
     max-width: 100%;
@@ -364,13 +352,11 @@
     gap: 1rem;
   }
 
-  /* Hide the decorative top photo and background circle */
   .wcu-img-top,
   .wcu-circle-deco {
     display: none;
   }
 
-  /* Main image: reset absolute positioning to normal flow */
   .wcu-img-main {
     position: relative;
     top: auto;
@@ -382,7 +368,6 @@
     border-radius: 16px;
   }
 
-  /* Call card: normal flow, full width */
   .wcu-call-card {
     position: relative;
     bottom: auto;
@@ -402,7 +387,6 @@
     font-size: 1rem;
   }
 
-  /* Right content */
   .wcu-heading {
     font-size: 1.6rem;
   }

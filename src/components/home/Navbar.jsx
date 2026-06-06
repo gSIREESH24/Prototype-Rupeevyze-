@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiHome, FiUser, FiGrid, FiBookOpen, FiMail } from 'react-icons/fi';
 import { FaRupeeSign, FaCalculator } from 'react-icons/fa';
-import logo from '../assets/logo.jpeg';
-import heroBg from '../assets/Finance.jpg';
+import logo from '../../assets/logo.jpeg';
+import heroBg from '../../assets/Finance.jpg';
 
-const Navbar = () => {
+const Navbar = ({ onNavigate }) => {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -34,18 +34,19 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ── Header ── */}
       <header className={`rv-header${scrolled ? ' rv-header--scrolled' : ''}`}>
         <div className="rv-header-inner">
-          {/* Logo */}
-          <button className="rv-logo-btn" onClick={() => scrollToSection('home')} aria-label="Home">
+          <button 
+            className="rv-logo-btn" 
+            onClick={() => onNavigate ? onNavigate('landing') : scrollToSection('home')} 
+            aria-label="Welcome Page"
+          >
             <img src={logo} alt="RupeeVyze" className="rv-logo-img" />
             <span className="rv-logo-text">
               Rupee<span className="rv-logo-accent">Vyze</span>
             </span>
           </button>
 
-          {/* Desktop Nav */}
           <nav className="rv-nav" aria-label="Main navigation">
             {navItems.map(item => (
               <button
@@ -59,7 +60,6 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* CTA */}
           <button
             className="rv-cta-btn rv-cta-desktop"
             onClick={() => scrollToSection('contact')}
@@ -67,7 +67,6 @@ const Navbar = () => {
             <FaRupeeSign /> Get Started
           </button>
 
-          {/* Hamburger */}
           <button
             className="rv-hamburger"
             onClick={toggleOffcanvas}
@@ -79,13 +78,16 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* ── Offcanvas ── */}
       <div
         className={`rv-offcanvas${isOffcanvasOpen ? ' rv-offcanvas--open' : ''}`}
         aria-hidden={!isOffcanvasOpen}
       >
         <div className="rv-offcanvas-head">
-          <div className="rv-offcanvas-brand">
+          <div 
+            className="rv-offcanvas-brand" 
+            onClick={() => { if (onNavigate) onNavigate('landing'); closeOffcanvas(); }}
+            style={{ cursor: 'pointer' }}
+          >
             <img src={logo} alt="RupeeVyze" className="rv-offcanvas-logo" />
             <span>Rupee<span className="rv-logo-accent">Vyze</span></span>
           </div>
@@ -113,12 +115,10 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Overlay */}
       {isOffcanvasOpen && (
         <div className="rv-overlay" onClick={closeOffcanvas} aria-hidden="true" />
       )}
 
-      {/* ── Hero Section ── */}
       <section id="home" className="rv-hero">
         <div
           className="rv-hero-bg"
@@ -141,7 +141,6 @@ const Navbar = () => {
       </section>
 
       <style>{`
-        /* ── Navbar ── */
         .rv-header {
           position: fixed;
           top: 0; left: 0;
@@ -184,7 +183,6 @@ const Navbar = () => {
         }
         .rv-logo-accent { color: #00A389; }
 
-        /* Desktop Nav */
         .rv-nav {
           display: flex;
           align-items: center;
@@ -213,7 +211,6 @@ const Navbar = () => {
           font-size: 0.92rem;
         }
 
-        /* CTA Button */
         .rv-cta-btn {
           display: inline-flex; align-items: center; gap: 0.4rem;
           background: linear-gradient(135deg, #1C4481, #00A389);
@@ -231,7 +228,6 @@ const Navbar = () => {
         .rv-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
         .rv-cta-mobile { width: 100%; justify-content: center; margin-top: 1rem; }
 
-        /* Hamburger */
         .rv-hamburger {
           display: none;
           background: rgba(255,255,255,0.08);
@@ -242,12 +238,11 @@ const Navbar = () => {
           cursor: pointer;
           align-items: center; justify-content: center;
           flex-shrink: 0;
-          margin-left: auto;   /* push to right edge of header */
+            margin-left: auto;
           transition: background 0.2s;
         }
         .rv-hamburger:hover { background: rgba(0,163,137,0.2); }
 
-        /* ── Offcanvas ── */
         .rv-offcanvas {
           position: fixed;
           top: 0; right: -300px;
@@ -304,14 +299,12 @@ const Navbar = () => {
         }
         .rv-offcanvas-link:hover { background: rgba(0,163,137,0.12); color: #00A389; }
 
-        /* Overlay */
         .rv-overlay {
           position: fixed; inset: 0;
           background: rgba(0,0,0,0.5);
           z-index: 1500;
         }
 
-        /* ── Hero ── */
         .rv-hero {
           position: relative;
           min-height: 100vh;
@@ -402,7 +395,6 @@ const Navbar = () => {
           }
         }
 
-        /* ── Responsive ── */
         @media (max-width: 960px) {
           .rv-header-inner { padding: 0 1.5rem; }
           .rv-nav { display: none; }

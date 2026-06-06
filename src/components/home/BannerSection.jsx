@@ -1,5 +1,5 @@
 import React from 'react';
-import bannerBg from '../assets/banner_bg.png';
+import bannerBg from '../../assets/banner_bg.png';
 
 export default function BannerSection() {
   return (

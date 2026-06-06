@@ -1,6 +1,6 @@
 import "./whychooseus.css";
 
-import HANDSHAKE_IMG from "./business_handshake.jpeg";
+import HANDSHAKE_IMG from "../../assets/homepage/business_handshake.jpeg";
 
 const features = [
   {
@@ -44,12 +44,9 @@ export default function WhyChooseUs() {
     <section className="wcu-section">
       <div className="wcu-inner">
 
-        {/* ── LEFT: Image collage ── */}
         <div className="wcu-left">
-          {/* decorative background circle */}
           <div className="wcu-circle-deco" />
 
-          {/* your uploaded image */}
           <img
             src={HANDSHAKE_IMG}
             alt="Business professionals handshake"
@@ -57,7 +54,6 @@ export default function WhyChooseUs() {
             onError={(e) => { e.target.style.display = "none"; }}
           />
 
-          {/* call card */}
           <div className="wcu-call-card">
             <div className="wcu-call-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -74,7 +70,6 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        {/* ── RIGHT: Content ── */}
         <div className="wcu-right">
           <p className="wcu-eyebrow">Why Choose Us?</p>
 
@@ -88,7 +83,6 @@ export default function WhyChooseUs() {
             build sustainable, long-term wealth with confidence.
           </p>
 
-          {/* Feature list */}
           <div className="wcu-features">
             {features.map((f) => (
               <div key={f.id} className="wcu-feature">
@@ -103,7 +97,6 @@ export default function WhyChooseUs() {
 
           <div className="wcu-divider" />
 
-          {/* Stats strip */}
           <div className="wcu-stats">
             <div className="wcu-stat">
               <span className="wcu-stat-num">5000<em>+</em></span>

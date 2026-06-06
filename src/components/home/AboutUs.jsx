@@ -67,7 +67,6 @@ const AboutUs = () => {
   return (
     <div className="au-page" id="about">
 
-      {/* ── Hero ── */}
       <section className="au-hero">
         <div className="au-container">
           <span className="au-eyebrow">About Us</span>
@@ -79,12 +78,10 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── Story Section Redesign (Split Quote + Interactive Timeline Cards) ── */}
       <section className="au-story-section" id="story">
         <div className="au-container">
           <div className="au-story-grid">
             
-            {/* Left Column: Split Quote Layout */}
             <div className="au-story-left">
               <span className="au-story-eyebrow">ABOUT RUPEEVYZE</span>
               <div className="au-quote-wrapper">
@@ -105,7 +102,6 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Right Column: Interactive Timeline Storytelling */}
             <div className="au-story-right">
               <div className="au-story-timeline">
                 <div className="au-timeline-line"></div>
@@ -132,7 +128,6 @@ const AboutUs = () => {
                         <h3 className="au-card-title">{step.title}</h3>
                         <p className="au-card-description">{step.description}</p>
                         
-                        {/* Interactive list inside card */}
                         <div className={`au-card-details ${isActive ? 'au-card-details--visible' : ''}`}>
                           {step.details.map((detail, dIdx) => (
                             <span key={dIdx} className="au-detail-pill">
@@ -151,7 +146,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── Experience Banner ── */}
       <section className="au-exp-banner">
         <div className="au-container">
           <div className="au-exp-inner">
@@ -165,12 +159,10 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── Redesigned Vision & Mission ── */}
       <section className="au-vm-section" id="vision-mission">
         <div className="au-container">
           <div className="au-vm-grid-new">
             
-            {/* Left: Dynamic Visual Showcase */}
             <div className="au-vm-left">
               <span className="au-vm-eyebrow">OUR DIRECTION</span>
               <h2 className="au-vm-title">Guided by purpose, driven by <span className="au-gradient-text-accent">growth</span>.</h2>
@@ -189,7 +181,6 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Right: Interactive Cards */}
             <div className="au-vm-right">
               {vmSteps.map((step, idx) => {
                 const isActive = activeVmIndex === idx;
@@ -212,7 +203,6 @@ const AboutUs = () => {
                     
                     <p className="au-vm-card-desc">{step.description}</p>
                     
-                    {/* Pillars List */}
                     <div className={`au-vm-pillars ${isActive ? 'au-vm-pillars--visible' : ''}`}>
                       {step.pillars.map((pillar, pIdx) => (
                         <div key={pIdx} className="au-vm-pillar-item">
@@ -233,7 +223,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── Values ── */}
       <section className="au-section au-section--faint">
         <div className="au-container">
           <h2 className="au-section-title">What Makes Us Different</h2>
@@ -254,7 +243,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── Tradition ── */}
       <section className="au-section au-section--white">
         <div className="au-container">
           <div className="au-two-col au-two-col--reversed">
@@ -289,13 +277,11 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── Inline Styles ── */}
       <style>{`
-        /* Shared tokens – aligned with App.css */
         .au-page {
           font-family: 'Inter', sans-serif;
           background: #fff;
-          padding-top: 68px;          /* matches rv-header height */
+          padding-top: 68px;
           color: #021B45;
           overflow-x: hidden;
         }
@@ -909,7 +895,6 @@ const AboutUs = () => {
           line-height: 1.5;
         }
 
-        /* ── Experience Banner ── */
         .au-exp-banner {
           background: linear-gradient(135deg, #021B45 0%, #1C4481 60%, #006677 100%);
           padding: 2.5rem 0;
@@ -939,7 +924,6 @@ const AboutUs = () => {
           font-size: 2rem;
         }
 
-        /* ── Vision & Mission ── */
         .au-vm-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -982,7 +966,6 @@ const AboutUs = () => {
           object-fit: cover;
         }
 
-        /* ── Values ── */
         .au-section-title {
           font-family: 'Outfit', sans-serif;
           font-size: 1.9rem;
@@ -1037,7 +1020,6 @@ const AboutUs = () => {
           line-height: 1.6;
         }
 
-        /* ── Block title ── */
         .au-block-title {
           font-family: 'Outfit', sans-serif;
           font-size: 1.7rem;
@@ -1047,7 +1029,6 @@ const AboutUs = () => {
           line-height: 1.3;
         }
 
-        /* ── Tags row ── */
         .au-tags {
           display: flex;
           flex-wrap: wrap;
@@ -1072,7 +1053,6 @@ const AboutUs = () => {
           font-size: 0.95rem;
         }
 
-        /* ── Responsive ── */
         @media (max-width: 900px) {
           .au-hero { padding: 2.5rem 0 2rem; }
           .au-hero-title { font-size: 2rem; }

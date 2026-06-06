@@ -1,6 +1,6 @@
 import "./claritysection.css";
 
-import HERO_IMAGE from "./clarity_hero.jpeg";
+import HERO_IMAGE from "../../assets/homepage/clarity_hero.jpeg";
 
 const AGENT_IMAGE =
   "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?w=120&h=120&fit=crop&crop=face";
@@ -10,30 +10,25 @@ export default function ClaritySection() {
     <section className="clarity-section">
       <div className="clarity-card">
 
-        {/* ── LEFT PANEL ── */}
         <div className="clarity-left">
           <div className="clarity-grid-overlay" />
 
           <div className="clarity-left-content">
-            {/* Eyebrow */}
             <div className="clarity-tag">
               <span className="clarity-tag-dot" />
               About RupeeVyze
             </div>
 
-            {/* Heading */}
             <h2 className="clarity-heading">
               Turning <span>Financial</span><br />
               Complexity into Clarity
             </h2>
 
-            {/* Subtext */}
             <p className="clarity-subtext">
               We simplify investments and financial decisions, helping individuals
               build confidence, security, and sustainable wealth — one goal at a time.
             </p>
 
-            {/* CTA Row */}
             <div className="clarity-cta-row">
               <a href="https://rupeevyze.com/apply-now/" className="clarity-btn">
                 Start Now
@@ -64,7 +59,6 @@ export default function ClaritySection() {
               </a>
             </div>
 
-            {/* Stats strip */}
             <div className="clarity-stats">
               <div className="clarity-stat">
                 <div className="clarity-stat-num">5000<span>+</span></div>
@@ -82,7 +76,6 @@ export default function ClaritySection() {
           </div>
         </div>
 
-        {/* ── RIGHT PANEL ── */}
         <div className="clarity-right">
           <img
             src={HERO_IMAGE}
@@ -95,7 +88,6 @@ export default function ClaritySection() {
           />
           <div className="clarity-img-overlay" />
 
-          {/* floating badge */}
           <div className="clarity-badge">
             <div className="clarity-badge-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
